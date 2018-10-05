@@ -9,7 +9,7 @@ Spree::Image.class_eval do
         SolidusMailchimpSync::ProductSynchronizer.new(self.viewable.product).auto_sync(force: true)
       else
         # image just on this variant, just need to sync this one.
-        SolidusMailchimpSync::VariantSynchronizer.new(self.variant).auto_sync(force: true)
+        SolidusMailchimpSync::VariantSynchronizer.new(self.viewable).auto_sync(force: true)
       end
     end
   end
