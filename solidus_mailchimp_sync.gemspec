@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'coffee-rails', '~> 4.2'
   s.add_development_dependency 'sass-rails', '~> 5.0'
   s.add_development_dependency 'database_cleaner', '~> 1.5'
-  s.add_development_dependency 'factory_girl', '~> 4.7'
+  s.add_development_dependency 'factory_bot', '~> 4.11'
   s.add_development_dependency 'rspec-rails', '~> 3.5'
   s.add_development_dependency 'rubocop', '~> 0.44'
   s.add_development_dependency 'rubocop-rspec', '~> 1.8'
