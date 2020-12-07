@@ -77,8 +77,18 @@ module SolidusMailchimpSync
       post(post_path)
     rescue SolidusMailchimpSync::Error => e
       if e.status == 400 && e.detail =~ /already exists/
-        patch(patch_path)
+        attempt_patch(patch_path)
       elsif e.status == 400 && e.detail.include?('may not contain the same line item')
+        # Do nothing, this is probably a duplicate request caused by a race condition
+      else
+        raise e
+      end
+    end
+
+    def attempt_patch(patch_path)
+      patch(patch_path)
+    rescue SolidusMailchimpSync::Error => e
+      if e.status == 400 && e.detail =~ /not found/
         # Do nothing, this is probably a duplicate request caused by a race condition
       else
         raise e
