@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir['test/**/*']
 
   s.add_dependency 'solidus_core', '~> 2.0'
-  s.add_dependency 'http', '~> 2.0'
+  s.add_dependency 'http', '~> 4.0'
   s.add_dependency 'ruby-progressbar', '~> 1.0' # already a solidus dependency
 
   s.add_development_dependency 'capybara', '~> 2.10'

@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/friendsoftheweb/solidus_mailchimp_sync.svg?branch=master)](https://travis-ci.org/friendsoftheweb/solidus_mailchimp_sync)
-
 SolidusMailchimpSync
 ====================
 
-**WIP**
+**WIP - Updated with support for Rails 6 and Ruby 2.7**
 
 Synchronizes Solidus data with [Mailchimp E-Commerce API](http://developer.mailchimp.com/documentation/mailchimp/guides/getting-started-with-ecommerce/). (Mailchimp API 3.0)
 
