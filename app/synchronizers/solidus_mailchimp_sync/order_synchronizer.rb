@@ -78,6 +78,8 @@ module SolidusMailchimpSync
     rescue SolidusMailchimpSync::Error => e
       if e.status == 400 && e.detail =~ /already exists/
         patch(patch_path)
+      elsif e.status == 400 && e.detail.include?('may not contain the same line item')
+        # Do nothing, this is probably a duplicate request caused by a race condition
       else
         raise e
       end

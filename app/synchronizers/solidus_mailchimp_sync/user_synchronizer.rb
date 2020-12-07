@@ -21,6 +21,11 @@ module SolidusMailchimpSync
       else
         put
       end
+    rescue SolidusMailchimpSync::Error => e
+      # This is supposed to be "add or update" a customer but apparently Mailchimp sometimes returns these errors anyway
+      return if e.status == 400 && e.detail.include?('already exists')
+
+      raise
     end
 
     def path
